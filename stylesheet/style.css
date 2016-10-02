@@ -1,0 +1,18 @@
+.header,footer{
+    color: #fff;
+    background-color: #222;
+}
+
+body{
+    background: #fff;
+}
+.container{
+    background: #FFA07A;
+}
+
+footer{
+    text-align: center;
+}
+form{
+    margin: 15% 25% 25% 25%;
+}
