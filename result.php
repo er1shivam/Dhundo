@@ -40,7 +40,7 @@
             $query .= "site_keyword LIKE '%$get_value%' ";
             //store the result 
             $result = mysqli_query($connection, $query);
-
+            if(!$result) die('Unable to run query:' . mysqli_error());
             if(mysql_num_rows($result)<1){
                 echo "<h3><center>Oops! Nothing was found 
                 in the database</center></h3>";
@@ -72,7 +72,10 @@
 
     ?>
     </main>
-
+<?php
+    if(isset($connection)) { mysqli_close($connection); }
+    ob_end_flush();
+?>
 </div>
 </body>
 </html>

@@ -93,5 +93,7 @@ else{
 }
 }
 ?>
-
-<?php ob_end_flush(); ?>
+<?php
+    if(isset($connection)) { mysqli_close($connection); }
+    ob_end_flush();
+?>
