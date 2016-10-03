@@ -16,3 +16,25 @@ footer{
 form{
     margin: 15% 25% 25% 25%;
 }
+#neg-style{
+    margin: 5% 10% 25% 30%;
+}
+
+#mid{
+    text-align: right;
+    align-content: right;
+}
+
+td{
+    color: #111;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+table{
+    background: cornflowerblue;
+    border: 2px solid #222;
+    align-content: center;
+    
+}
