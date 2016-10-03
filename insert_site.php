@@ -7,13 +7,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/style.css"/>
-    <title>Document</title>
+    <title>Add a website</title>
 </head>
 <body>
 <div class="container">
         <div class="row">
         <div class="col-md-12 header">
-            <h1>DHUND</h1>
+          <a href="search.html"><h1>DHUND</h1></a>
             <pre><h3><p>           Your own search engine.. </p></h3></pre>
         </div>
         </div>

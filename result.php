@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Results</title>
 <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/style1.css"/>
@@ -12,7 +13,7 @@
 <div class="ful">
      <div class="row">
         <div class="col-md-1">
-        <h3>DHUND </h3>
+        <a href="search.html"><h3>DHUND </h3></a>
         </div>
         <div class="col-md-9">
         <form action="result.php" method="get">
@@ -29,7 +30,7 @@
             $get_value = $_GET['user_query'];
             //perform query
             $query =  "SELECT * FROM sites WHERE ";
-            $query .= "site_keywords LIKE '%$get_value%' ";
+            $query .= "site_keyword LIKE '%$get_value%' ";
             //store the result 
             $result = mysqli_query($connection, $query);
 
@@ -37,16 +38,16 @@
                 
                 $site_title = $row_result['site_title'];
                 $site_link = $row_result['site_link'];
-                $site_keywords = $row_result['site_keywords'];
+                $site_keywords = $row_result['site_keyword'];
                 $site_description = $row_result['site_desc'];
                 $site_image = $row_result['site_image'];
 
 
-                echo "<div> 
+                echo "<div class='hd-results'> 
                         <h2> {$site_title} </h2>
                         <a href='$site_link' target='_blank'>$site_link </a>
                         <p align='justify'>$site_description</p>
-                        <img src='images/$site_image' width=\"100\" height=\"100\" /> 
+                        <img src='images/$site_image' width=\"300\" height=\"180\" /> 
 
                 </div>";
 

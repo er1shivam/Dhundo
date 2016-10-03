@@ -10,6 +10,7 @@
     $dbname = "widget_corp";
     */
     // 1. create a database connection
+    global $connection;
     $connection = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
     // test if connection occured.
     if(mysqli_connect_errno()) {

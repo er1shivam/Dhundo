@@ -21,6 +21,11 @@
     background: #FF8C00;
     font-weight: bolder;
 }
+.hd-results{
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 15px;
+}
 
 
 body{
