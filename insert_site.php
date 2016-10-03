@@ -54,29 +54,44 @@
 </html>
 
 <?php
-    if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
+//escape all strings
+$site_title = mysql_prep($_POST['site_title']);
+$site_link = mysql_prep($_POST['site_link']);
+$site_keyword = mysql_prep($_POST['site_keyword']);
+$site_description = mysql_prep($_POST['site_desc']);
+$site_image = mysql_prep($_FILES['site_image']['name']);
+$site_image_temp = mysql_prep($_FILES['site_image']['tmp_name']);
 
-       $site_title = $_POST['site_title'];
-       $site_link = $_POST['site_link'];
-       $site_keyword = $_POST['site_keyword'];
-       $site_description = $_POST['site_desc'];
-       $site_image = $_FILES['site_image']['name'];
-       $site_image_temp = $_FILES['site_image']['tmp_name'];
+if($site_title=='' || $site_link=='' || $site_keyword=='' || 
+$site_description==''){
+    echo "<script> alert('Please fill all the fields');</script>";
+    //redirect_to("insert_site.php");
+    exit();
+}
+else{
+    $query =  "INSERT INTO ";
+    $query .= "sites (site_title, site_link, site_keyword, site_desc, ";
+    $query .= "site_image) ";
+    $query .= "VALUES ('$site_title', '{$site_link}', '{$site_keyword}', ";
+    $query .= "'{$site_description}', '{$site_image}' )";
 
-       if($site_title=='' || $site_link=='' || $site_keyword=='' || 
-       $site_description==''){
-           echo "<script> alert('Please fill all the fields')</script>";
-           redirect_to("insert_site.php");
-       }
+    move_uploaded_file($site_image_temp,"images/{$site_image}"); 
 
-
-
-    }
-
-
-
+    $result = mysqli_query($connection,$query);
+    // test if there was a query error
+     if ($result){
+         //success // redirect_to somepage.php
+         echo "<script>alert('Data inserted into table')</script>";
+         //redirect_to ("insert_site.php");
+     }
+     else{
+    // failure 
+     //die("Database query failed" . mysqli_error($connection));
+     echo "<script>alert('ERROR IN  table')</script>";
+     }
+}
+}
 ?>
 
-<?php
-    ob_end_flush();
-?>
+<?php ob_end_flush(); ?>
