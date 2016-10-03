@@ -1,3 +1,6 @@
+<?php ob_start();
+ require_once("connect_db.php"); ?>
+<?php require_once("functions.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +21,43 @@
         </form>
         </div>
       </div>
-      <main>
-      <p>
-      this si fsjfls
-      </p>
-      <p>
-      jksflsdf
-      </p>
+    <main>
+    <?php
+        // if search clicked
+        if(isset($_GET['search'])){
+            //store the user search value
+            $get_value = $_GET['user_query'];
+            //perform query
+            $query =  "SELECT * FROM sites WHERE ";
+            $query .= "site_keywords LIKE '%$get_value%' ";
+            //store the result 
+            $result = mysqli_query($connection, $query);
+
+            while($row_result=mysqli_fetch_array($result)){
+                
+                $site_title = $row_result['site_title'];
+                $site_link = $row_result['site_link'];
+                $site_keywords = $row_result['site_keywords'];
+                $site_description = $row_result['site_desc'];
+                $site_image = $row_result['site_image'];
+
+
+                echo "<div> 
+                        <h2> {$site_title} </h2>
+                        <a href='$site_link' target='_blank'>$site_link </a>
+                        <p align='justify'>$site_description</p>
+                        <img src='images/$site_image' width=\"100\" height=\"100\" /> 
+
+                </div>";
 
 
 
-</main>
+            }
+
+        }      
+
+    ?>
+    </main>
 
 </div>
 </body>
