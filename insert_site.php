@@ -60,8 +60,8 @@ $site_title = mysql_prep($_POST['site_title']);
 $site_link = mysql_prep($_POST['site_link']);
 $site_keyword = mysql_prep($_POST['site_keyword']);
 $site_description = mysql_prep($_POST['site_desc']);
-$site_image = mysql_prep($_FILES['site_image']['name']);
-$site_image_temp = mysql_prep($_FILES['site_image']['tmp_name']);
+$site_image = $_FILES['site_image']['name'];
+$site_image_temp = $_FILES['site_image']['tmp_name'];
 
 if($site_title=='' || $site_link=='' || $site_keyword=='' || 
 $site_description==''){
