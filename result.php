@@ -29,10 +29,23 @@
             //store the user search value
             $get_value = $_GET['user_query'];
             //perform query
+            if($get_value == ''){
+                echo "<center> <h2>Please go back and write something
+                in the search box</h2> </center>";
+                exit();
+            }
+            
+            
             $query =  "SELECT * FROM sites WHERE ";
             $query .= "site_keyword LIKE '%$get_value%' ";
             //store the result 
             $result = mysqli_query($connection, $query);
+
+            if(mysql_num_rows($result)<1){
+                echo "<h3><center>Oops! Nothing was found 
+                in the database</center></h3>";
+                exit();
+            }
 
             while($row_result=mysqli_fetch_array($result)){
                 
@@ -47,7 +60,7 @@
                         <h2> {$site_title} </h2>
                         <a href='$site_link' target='_blank'>$site_link </a>
                         <p align='justify'>$site_description</p>
-                        <img src='images/$site_image' width=\"300\" height=\"180\" /> 
+                        <img src='images/$site_image' width=\"280\" height=\"250\" /> 
 
                 </div>";
 
