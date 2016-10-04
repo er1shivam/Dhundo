@@ -36,6 +36,7 @@
             }
             
             
+            
             $query =  "SELECT * FROM sites WHERE ";
             $query .= "site_keyword LIKE '%$get_value%' ";
             //store the result 
