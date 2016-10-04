@@ -13,7 +13,7 @@
 <div class="container">
         <div class="row">
         <div class="col-md-12 header">
-          <a href="search.html"><h1>DHUND</h1></a>
+          <a href="search.html"><h1>DHUNDO</h1></a>
             <pre><h3><p>           Your own search engine.. </p></h3></pre>
         </div>
         </div>
