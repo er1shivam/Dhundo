@@ -34,11 +34,11 @@ You can go and check the search-engine [Dhundo](http://dhundo.byethost7.com/) ru
   alt="Screenshot"/>
 </p>
 <p align="center" width="250" height="300">
-  <img src="images/screenshot2.PNG"
+  <img src="images/screenshot4.PNG"
   alt="Screenshot"/>
 </p>
 <p align="center" width="250" height="300">
-  <img src="images/screenshot3.PNG"
+  <img src="images/screenshot5.PNG"
   alt="Screenshot"/>
 </p>
 
