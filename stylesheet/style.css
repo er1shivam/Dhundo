@@ -2,6 +2,15 @@
     color: #fff;
     background-color: #222;
 }
+
+a{
+    color: cyan;
+}
+a:hover{
+    color: hotpink;
+}
+
+
 .row{
       color: #fff;
       background: #222;
