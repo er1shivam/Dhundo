@@ -2,7 +2,7 @@
  // USING CONSTANTS 
     define("DB_SERVER", "localhost");
     define("DB_USER", "root");
-    define("DB_PASS", "shivam5@");
+    define("DB_PASS", "");
     define("DB_NAME", "search");
    /* $dbhost = "localhost";
     $dbuser = "widget_cms";
@@ -11,14 +11,13 @@
     */
     // 1. create a database connection
     global $connection;
-    $connection = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
+    $connection = 'mysql:host=localhost; dbname=search';
+    try{
+    $db = new PDO($connection,DB_USER,DB_PASS);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
     // test if connection occured.
-    if(mysqli_connect_errno()) {
-        die("Database connection failed: " . 
-        mysqli_connect_error() . 
-        "(" . mysqli_connect_errno() . ")"
-        );
     }
-
-
+    catch(PDOException $ex){
+        echo "connection failed" . $ex->getMessage();
+    }
 ?>
