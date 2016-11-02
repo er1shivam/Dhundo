@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/style.css"/>
+    <script src="js/sweetalert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="stylesheet/sweetalert.css">
     <title>Add a website</title>
 </head>
 <body>
@@ -65,7 +67,7 @@ $site_image_temp = $_FILES['site_image']['tmp_name'];
 
 if($site_title=='' || $site_link=='' || $site_keyword=='' || 
 $site_description==''){
-    echo "<script> alert('Please fill all the fields');</script>";
+    echo "<script> swal(\"Something was Empty!\", \"Please fill all the fields.\", \"error\");</script>";
     //redirect_to("insert_site.php");
     exit();
 }
