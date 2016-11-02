@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/style1.css"/>
+    <link rel="stylesheet" href="js/sweetalert.min.js">
 </head>
 <body>
 <div class="ful">
@@ -35,20 +36,13 @@
                 exit();
             }
             
-            
-            
             $query =  "SELECT * FROM sites WHERE ";
-            $query .= "site_keyword LIKE '%$get_value%' ";
+            $query .= "site_keyword LIKE :ky";
             //store the result 
-            $result = mysqli_query($connection, $query);
-            if(!$result) die('Unable to run query:' . mysqli_error());
-            if(mysqli_num_rows($result)<1){
-                echo "<h3><center>Oops! Nothing was found 
-                in the database</center></h3>";
-                exit();
-            }
+            $statement1 = $db->prepare($query);
+            $statement1->execute(array(':ky' => '%'.$get_value.'%'));
 
-            while($row_result=mysqli_fetch_array($result)){
+            while($row_result=$statement1->fetch()){
                 
                 $site_title = $row_result['site_title'];
                 $site_link = $row_result['site_link'];
@@ -65,8 +59,6 @@
 
                 </div>";
 
-
-
             }
 
         }      
@@ -74,7 +66,6 @@
     ?>
     </main>
 <?php
-    if(isset($connection)) { mysqli_close($connection); }
     ob_end_flush();
 ?>
 </div>
