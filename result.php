@@ -42,6 +42,12 @@
             $statement1 = $db->prepare($query);
             $statement1->execute(array(':ky' => '%'.$get_value.'%'));
 
+            if($statement1 -> rowCount() == 0){
+                echo "<center> <h2>The expected query is not in our database.<br/>
+                However,You can add the website by going back.</h2> </center>";
+                exit();
+            }
+        else{
             while($row_result=$statement1->fetch()){
                 
                 $site_title = $row_result['site_title'];
@@ -60,6 +66,7 @@
                 </div>";
 
             }
+        }
 
         }      
 
