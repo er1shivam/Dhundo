@@ -6,7 +6,7 @@ This is basically my first project in PHP :smile:
 
 # Use-how
 Note:
-I haven't added much database in the [Dhundo](http://dhundo.byethost7.com).
+I haven't added much database in the [Dhundo](http://bit.ly/er1shivam_dhundo).
 Some of the keywords you can use to search and get results are:
 
 google,face,facebook,gmail,twit,twitter,online,learning,tutorial,udacity,edx,quora,youtube,video,
@@ -19,7 +19,7 @@ into the Database. cool n !! :smile:
 # Play || Go to website
 
 Since github doesn't provide hosting php sites, I am hosting  on some other servers.
-You can go and check the search-engine [Dhundo](http://dhundo.byethost7.com/) running 24*7 [here](http://dhundo.byethost7.com/).
+You can go and check the search-engine [Dhundo](http://bit.ly/er1shivam_dhundo) running 24*7 [here](http://bit.ly/er1shivam_dhundo).
 <br />
 
 # Screenshots
