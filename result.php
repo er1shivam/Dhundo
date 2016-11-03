@@ -14,7 +14,7 @@
 <div class="ful">
      <div class="row">
         <div class="col-md-1">
-        <a href="search.html"><h3>DHUNDO </h3></a>
+        <a href="index.html"><h3>DHUNDO </h3></a>
         </div>
         <div class="col-md-9">
         <form action="result.php" method="get">
